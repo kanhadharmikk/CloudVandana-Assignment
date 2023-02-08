@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 2</title>
+</head>
+<style>
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .btn {
+        background-color: black;
+        color: white;
+        padding: 5px 50px;
+        font-weight: 600;
+    }
+
+    .btn:hover {
+        opacity: 0.8;
+    }
+</style>
+
+<body>
+    <div>
+        <h3>Assignment 2</h3>
+
+        <form action="">
+            <label>Enter a Sentence (any English sentence)</label> <input type="text" id="sentence" placeholder="Enter a Sentence"> <br> <br>
+            <label>Enter a Letter (any letter from A to Z)
+            </label> <input type="text" id="letter" placeholder="Enter a Letter"> <br> <br>
+
+            <button class="btn" onclick="result()">Submit</button>
+
+
+        </form>
+    </div>
+
+    <script>
+        function result() {
+            var sentence = document.getElementById("sentence").value;
+            var letter = document.getElementById("letter").value;
+            var letterIndex = sentence.indexOf(letter);
+
+            if (letterIndex >= 0) {
+                alert("Result: " + sentence.substring(letterIndex + 1));
+                
+            }
+          
+            else {
+                alert("Result: The letter does not exist in the sentence");
+            }
+
+
+        }
+    </script>
+</body>
+
+</html>

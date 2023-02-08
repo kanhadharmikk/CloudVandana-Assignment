@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 1</title>
+</head>
+<style>
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    table,
+    td,
+    th {
+        border: 1px solid black;
+        border-collapse: collapse;
+        padding: 10px;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+
+    .btnTop {
+        background-color: black;
+        color: white;
+        padding: 5px 60px;
+    }
+
+    .btnTop:hover {
+        opacity: 0.8;
+    }
+
+    .btnBottom {
+        background-color: black;
+        color: white;
+        padding: 5px 60px;
+    }
+
+    .btnBottom:hover {
+        opacity: 0.8;
+    }
+</style>
+
+<body>
+    <h4>HTML table with 5 columns and 5 rows (Assignment 1)</h4>
+    <table>
+        <tr>
+            <th>SL.No.</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>City</th>
+            <th>Country</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>Chandrakanha</td>
+            <td>Dharmik</td>
+            <td>Nagpur</td>
+            <td>India</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Hemraj</td>
+            <td>Dharmik</td>
+            <td>Nagpur</td>
+            <td>India</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>Himanshu</td>
+            <td>Santani</td>
+            <td>Kamptee</td>
+            <td>India</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>Akash</td>
+            <td>Gedam</td>
+            <td>California</td>
+            <td>USA</td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td>Kunal</td>
+            <td>Kushwaha</td>
+            <td>London</td>
+            <td>Uk</td>
+        </tr>
+
+    </table>
+
+    <button class="btnTop" onclick="addTop()">Add row to top</button>
+    <button class="btnBottom" onclick="addBottom()">Add row to Bottom</button>
+
+    <script>
+        function addTop() {
+            var table = document.getElementsByTagName("table")[0];
+            var row = table.insertRow(1);
+            var cell1 = row.insertCell(0);
+            var cell2 = row.insertCell(1);
+            var cell3 = row.insertCell(2);
+            var cell4 = row.insertCell(3);
+            var cell5 = row.insertCell(4);
+            cell1.innerHTML = table.rows.length;
+            cell2.innerHTML = "Rekha Top";
+            cell3.innerHTML = "Kumbhare";
+            cell4.innerHTML = "Nagpur";
+            cell5.innerHTML = "India";
+
+            updateSerialNo();
+        }
+        function addBottom() {
+
+
+            var table = document.getElementsByTagName("table")[0];
+            var row = table.insertRow(-1);
+            var cell1 = row.insertCell(0);
+            var cell2 = row.insertCell(1);
+            var cell3 = row.insertCell(2);
+            var cell4 = row.insertCell(3);
+            var cell5 = row.insertCell(4);
+            cell1.innerHTML = table.rows.length - 1;
+            cell2.innerHTML = "Kanha Bottom";
+            cell3.innerHTML = "Dharmik";
+            cell4.innerHTML = "Nagpur";
+            cell5.innerHTML = "India";
+
+            updateSerialNo();
+        }
+
+        function updateSerialNo() {
+            var table = document.getElementsByTagName("table")[0];
+            for (var i = 1; i < table.rows.length; i++) {
+                table.rows[i].cells[0].innerHTML = i;
+            }
+        }
+
+        window.onload = function () {
+            updateSerialNo();
+        }
+
+
+    </script>
+
+</body>
+
+</html>
